@@ -2,6 +2,6 @@ export default function Page() {
 
 
     return <div>
-        Main Page
+        contact Page
     </div>
 }
