@@ -1,3 +1,5 @@
+
+
 export function generateMetadata({params}: {
     params: {productId: string}
 }) {
@@ -12,7 +14,11 @@ export default function ProductId({params} : {
 }) {
 
     const productID = params.productId
+
+    
     return <div>
         This is about Product {productID}
+
+      
     </div>
 }
