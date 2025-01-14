@@ -1,12 +1,15 @@
 "use client";
 export default function Error({
-    error
+    error,
+    reset
 }: {
     error: Error
+    reset: () => void
 }) {
 
 
     return <div>
         {error.message}
+        <button  onClick={reset}>Retry</button>
     </div>
 }

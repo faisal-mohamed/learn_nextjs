@@ -1,11 +1,16 @@
 "use client";
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 export default function ErrorPage() {
+    const [state, setState] = useState(0);
 
     useEffect(() => {
-      throw  new Error("This Error is Triggered manually for testing...")
+      setState(() => Math.floor(Math.random()*2) )
     }, [])
+
+    if(state == 1) {
+        throw new Error("Manually Triggerd Error for testing...")
+    }
 
     return <div>
 
