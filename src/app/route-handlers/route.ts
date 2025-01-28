@@ -1,8 +1,16 @@
 import { users } from "./data"
+import { NextRequest } from "next/server";
 
 
 
-export  async function GET() {
+export  async function GET(req: NextRequest) {
+    const searchParams = req.nextUrl.searchParams;
+
+    const query = searchParams.get("query");
+    if(query) {
+        const filteredUsers = users.filter(user => user.age === parseInt(query));
+        return Response.json(filteredUsers);
+    }
     return  Response.json(users);
 }
 
